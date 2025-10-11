@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Muhzijk Medicals</title>
+  <meta name="description" content="Muhzijk Medicals — Quality Medical Equipment for Healthcare Excellence" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <img src="assets/logo.png" alt="Muhzijk Medicals logo" class="logo">
+        <div class="brand-text">
+          <h1>Muhzijk Medicals</h1>
+          <p class="tagline">Quality Medical Equipment for Healthcare Excellence</p>
+          <p class="subtag">Branded for Brilliance, Crafted for Care</p>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#vision">Vision</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="hero container">
+      <div class="hero-content">
+        <h2>Trusted medical supplies with consistent quality</h2>
+        <p>Reliable products, attentive service, and a commitment to healthcare excellence across the UAE.</p>
+        <div class="hero-cta">
+          <a href="#products" class="btn primary">View Products</a>
+          <a href="#contact" class="btn outline">Contact Us</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="assets/hero-medical.png" alt="medical supplies" />
+      </div>
+    </section>
+
+    <section id="about" class="section container">
+      <h3>About Us</h3>
+      <p>Muhzijk Medicals is dedicated to delivering high-quality medical consumables and devices for healthcare providers. We focus on consistent quality, quick response times, and long-term partnerships with healthcare professionals.</p>
+    </section>
+
+    <section id="vision" class="section container two-col">
+      <div>
+        <h3>Our Vision</h3>
+        <p>To be recognized as a trusted provider of medical supplies, promoting better patient outcomes through reliable products and ethical business practices.</p>
+      </div>
+      <div>
+        <h3>Our Mission</h3>
+        <p>To ensure access to essential, high-quality medical products while maintaining integrity, safety, and responsiveness to the needs of healthcare partners.</p>
+      </div>
+    </section>
+
+    <section id="products" class="section container">
+      <h3>Products</h3>
+      <p class="muted">A selection of our core consumables and supplies.</p>
+      <div class="grid grid-5">
+        <div class="card">
+          <img src="assets/medical_tape.jpg" alt="Medical Tape">
+          <h4>Medical Tape</h4>
+        </div>
+        <div class="card">
+          <img src="assets/surgical_sutures.jpg" alt="Surgical Sutures">
+          <h4>Surgical Sutures</h4>
+        </div>
+        <div class="card">
+          <img src="assets/iv_dressing.jpg" alt="IV Dressings">
+          <h4>IV Dressings</h4>
+        </div>
+        <div class="card">
+          <img src="assets/wound_dressing.jpg" alt="Wound Dressings">
+          <h4>Wound Dressings</h4>
+        </div>
+        <div class="card">
+          <img src="assets/bandage.jpg" alt="Bandages">
+          <h4>Bandages</h4>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section container contact-section">
+      <h3>Contact Us</h3>
+      <p class="muted">Reach out to us — we respond to inquiries promptly.</p>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h4>Email</h4>
+          <p><a href="mailto:Sales@muhzijkmedicals.com">Sales@muhzijkmedicals.com</a></p>
+          <p><a href="mailto:Info@muhzijkmedicals.com">Info@muhzijkmedicals.com</a></p>
+        </div>
+        <div class="contact-card">
+          <h4>Phone / WhatsApp</h4>
+          <p>UAE: <a href="tel:+971562352742">+971 562352742</a></p>
+          <p>India: <a href="tel:+918296403080">+91 8296403080</a></p>
+        </div>
+        <div class="contact-card">
+          <h4>Location</h4>
+          <p>Abu Dhabi, UAE</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Muhzijk Medicals. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+      });
+    });
+  </script>
+</body>
+</html>
