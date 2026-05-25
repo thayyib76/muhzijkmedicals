@@ -1,131 +1,768 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Muhzijk Medicals</title>
-  <meta name="description" content="Muhzijk Medicals — Quality Medical Equipment for Healthcare Excellence" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="assets/favicon.png" type="image/png">
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Muhzijk Medicals — Branded for Brilliance, Crafted for Care</title>
+<meta name="description" content="Premium medical consumables for the modern healthcare network. Direct B2B supply to GCC hospitals and distributors."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+:root {
+  --navy: #0B1B3E;
+  --navy-mid: #122652;
+  --navy-light: #1A3470;
+  --gold: #C9A84C;
+  --gold-light: #E2C07A;
+  --gold-pale: #F5EDD6;
+  --white: #FAFAF8;
+  --offwhite: #F3F2EE;
+  --text-muted: #6B7280;
+  --border: rgba(11,27,62,0.10);
+  --emerald: #0F7B5E;
+  --emerald-light: #E1F5EE;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);overflow-x:hidden}
+
+/* ─── TYPOGRAPHY ─── */
+.display{font-family:'Cormorant Garamond',serif;font-weight:300;letter-spacing:-0.02em;line-height:1.05}
+.serif{font-family:'Cormorant Garamond',serif}
+.mono{font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.08em}
+
+/* ─── NAV ─── */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:100;transition:all 0.4s ease;padding:0}
+#navbar.scrolled{background:rgba(11,27,62,0.97);backdrop-filter:blur(16px);box-shadow:0 1px 40px rgba(0,0,0,0.3)}
+.nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:72px}
+.nav-logo{display:flex;align-items:center;gap:14px;text-decoration:none}
+.nav-logo-mark{width:38px;height:38px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.2rem;color:var(--navy);flex-shrink:0}
+.nav-logo-text{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.25rem;color:#fff;letter-spacing:0.04em}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
+.nav-links a:hover{color:#fff}
+.nav-links a:hover::after{width:100%}
+.nav-cta{background:var(--gold);color:var(--navy)!important;padding:10px 22px!important;border-radius:2px;font-weight:600!important;transition:background 0.2s!important}
+.nav-cta:hover{background:var(--gold-light)!important}
+.nav-cta::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:24px;height:1.5px;background:#fff;transition:all 0.3s}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--navy);padding:2rem;z-index:99;border-top:1px solid rgba(255,255,255,0.1)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;color:rgba(255,255,255,0.8);text-decoration:none;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.9rem;letter-spacing:0.04em;text-transform:uppercase}
+
+/* ─── HERO ─── */
+#hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden}
+.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.06) 1px,transparent 1px);background-size:80px 80px;opacity:0.6}
+.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.12}
+.hero-orb-1{width:600px;height:600px;background:var(--gold);top:-200px;right:-100px}
+.hero-orb-2{width:400px;height:400px;background:#1A5CB0;bottom:-100px;left:-100px}
+.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:8rem 2rem 4rem;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.4);padding:6px 16px;border-radius:40px;margin-bottom:2rem;color:var(--gold-light);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase}
+.hero-tag-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
+.hero-h1{font-size:clamp(2.8rem,5vw,4.8rem);color:#fff;margin-bottom:1.5rem;line-height:1.02}
+.hero-h1 em{color:var(--gold-light);font-style:normal}
+.hero-sub{color:rgba(255,255,255,0.6);font-size:1.05rem;line-height:1.75;margin-bottom:2.5rem;max-width:480px;font-weight:300}
+.hero-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:2px;font-weight:600;font-size:0.88rem;letter-spacing:0.04em;text-decoration:none;transition:all 0.2s;text-transform:uppercase}
+.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.7);font-size:0.88rem;text-decoration:none;transition:color 0.2s;letter-spacing:0.04em;text-transform:uppercase}
+.btn-ghost:hover{color:#fff}
+.hero-right{position:relative}
+.hero-card-stack{position:relative;height:420px}
+.stat-card{position:absolute;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;backdrop-filter:blur(20px);padding:1.5rem;color:#fff}
+.stat-card-main{width:280px;top:0;left:0;right:0;margin:0 auto}
+.stat-card-2{width:220px;bottom:60px;right:0;background:rgba(201,168,76,0.12);border-color:rgba(201,168,76,0.3)}
+.stat-card-3{width:200px;bottom:0;left:0;background:rgba(15,123,94,0.15);border-color:rgba(15,123,94,0.3)}
+.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--gold-light)}
+.stat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:4px;letter-spacing:0.06em;text-transform:uppercase}
+.cert-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:1rem}
+.cert-badge{font-family:'DM Mono',monospace;font-size:0.68rem;padding:4px 10px;border-radius:3px;letter-spacing:0.06em;border:1px solid rgba(201,168,76,0.5);color:var(--gold-light)}
+.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.4);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;z-index:2}
+.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(201,168,76,0.5),transparent);animation:scrollAnim 2s infinite}
+@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ─── SECTION BASE ─── */
+section{padding:6rem 2rem}
+.container{max-width:1280px;margin:0 auto}
+.section-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--emerald);margin-bottom:1rem;padding:4px 12px;background:var(--emerald-light);border-radius:2px}
+.section-title{font-size:clamp(2rem,3.5vw,3rem);line-height:1.1;margin-bottom:1.25rem}
+.section-sub{color:var(--text-muted);font-size:1.05rem;line-height:1.75;font-weight:300;max-width:600px}
+.divider{width:48px;height:2px;background:var(--gold);margin-bottom:2rem}
+
+/* ─── ABOUT ─── */
+#about{background:var(--offwhite)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-top:4rem}
+.about-visual{position:relative}
+.about-main-block{background:var(--navy);border-radius:4px;padding:3rem;color:#fff;position:relative;overflow:hidden}
+.about-main-block::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(201,168,76,0.15)}
+.about-metric{margin-bottom:2rem}
+.about-metric-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold-light);line-height:1}
+.about-metric-label{color:rgba(255,255,255,0.6);font-size:0.82rem;margin-top:4px;letter-spacing:0.06em;text-transform:uppercase}
+.about-sub-block{background:#fff;border:1px solid var(--border);border-radius:4px;padding:1.5rem;margin-top:1rem}
+.about-sub-icon{width:40px;height:40px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--gold);font-size:1rem}
+.pillar{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.pillar-icon{width:44px;height:44px;border-radius:3px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0}
+.pillar-title{font-weight:600;font-size:0.9rem;margin-bottom:4px;color:var(--navy)}
+.pillar-text{color:var(--text-muted);font-size:0.88rem;line-height:1.6;font-weight:300}
+
+/* ─── SOLUTIONS ─── */
+#solutions{background:#fff}
+.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4rem;border:2px solid var(--navy);border-radius:4px;overflow:hidden}
+.solution-card{padding:3rem 2.5rem;background:#fff;transition:background 0.3s;cursor:default}
+.solution-card:hover{background:var(--navy)}
+.solution-card:hover .sc-num{color:rgba(255,255,255,0.15)}
+.solution-card:hover .sc-icon{background:rgba(201,168,76,0.2);color:var(--gold-light)}
+.solution-card:hover .sc-title{color:#fff}
+.solution-card:hover .sc-text{color:rgba(255,255,255,0.6)}
+.solution-card:hover .sc-tag{border-color:rgba(201,168,76,0.4);color:var(--gold-light)}
+.solution-card+.solution-card{border-left:2px solid var(--navy)}
+.sc-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(11,27,62,0.06);line-height:1;margin-bottom:1rem;transition:color 0.3s}
+.sc-icon{width:52px;height:52px;border-radius:3px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.3rem;margin-bottom:1.5rem;transition:all 0.3s}
+.sc-title{font-size:1.25rem;font-weight:600;margin-bottom:0.75rem;color:var(--navy);transition:color 0.3s}
+.sc-text{color:var(--text-muted);font-size:0.88rem;line-height:1.7;font-weight:300;margin-bottom:1.5rem;transition:color 0.3s}
+.sc-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.68rem;padding:4px 10px;border:1px solid var(--border);border-radius:2px;color:var(--text-muted);letter-spacing:0.06em;transition:all 0.3s}
+
+/* ─── PRODUCTS ─── */
+#products{background:var(--navy);padding:6rem 2rem}
+#products .section-tag{background:rgba(201,168,76,0.15);color:var(--gold-light)}
+#products .section-title{color:#fff}
+#products .section-sub{color:rgba(255,255,255,0.55)}
+#products .divider{background:var(--gold)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:4rem}
+.product-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:2.5rem;transition:all 0.3s;position:relative;overflow:hidden}
+.product-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(201,168,76,0.4);transform:translateY(-4px)}
+.product-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.3s}
+.product-card:hover::before{height:100%}
+.product-icon{width:64px;height:64px;margin-bottom:2rem;opacity:0.9}
+.product-title{color:#fff;font-size:1.15rem;font-weight:600;margin-bottom:0.75rem}
+.product-text{color:rgba(255,255,255,0.5);font-size:0.88rem;line-height:1.7;font-weight:300;margin-bottom:1.5rem}
+.product-specs{display:flex;flex-direction:column;gap:6px}
+.product-spec{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.4);font-size:0.78rem;font-family:'DM Mono',monospace;letter-spacing:0.04em}
+.product-spec i{color:var(--emerald);font-size:0.7rem}
+.product-expand{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);color:var(--gold-light);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+
+/* ─── GLOBAL REACH ─── */
+#reach{background:var(--offwhite)}
+.reach-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
+.location-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:2.5rem;position:relative;transition:box-shadow 0.3s}
+.location-card:hover{box-shadow:0 20px 60px rgba(11,27,62,0.1)}
+.location-flag{font-size:2rem;margin-bottom:1rem}
+.location-country{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem}
+.location-city{font-size:1.5rem;font-weight:600;color:var(--navy);margin-bottom:1rem;font-family:'Cormorant Garamond',serif}
+.location-role{display:inline-block;padding:4px 12px;background:var(--navy);color:var(--gold-light);font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.08em;border-radius:2px;margin-bottom:1.5rem}
+.location-detail{color:var(--text-muted);font-size:0.88rem;line-height:1.7;font-weight:300}
+.reach-connector{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
+.connector-line{flex:1;width:1px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
+.connector-icon{width:50px;height:50px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem}
+.reach-cepa{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:8px;padding:2rem;color:#fff;margin-top:2rem}
+.cepa-title{font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.5rem}
+.cepa-text{color:rgba(255,255,255,0.6);font-size:0.88rem;line-height:1.6;font-weight:300}
+.cepa-badge{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);padding:6px 14px;border-radius:20px;color:var(--gold-light);font-size:0.75rem;font-family:'DM Mono',monospace;letter-spacing:0.06em}
+
+/* ─── CONTACT ─── */
+#contact{background:#fff}
+.contact-grid{display:grid;grid-template-columns:5fr 4fr;gap:5rem;margin-top:4rem;align-items:start}
+.form-group{margin-bottom:1.5rem}
+.form-label{display:block;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-family:'DM Mono',monospace}
+.form-input{width:100%;padding:14px 16px;border:1px solid rgba(11,27,62,0.15);border-radius:3px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--navy);background:var(--offwhite);transition:all 0.2s;outline:none}
+.form-input:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(201,168,76,0.1)}
+.form-input::placeholder{color:#9CA3AF}
+textarea.form-input{resize:vertical;min-height:140px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.btn-submit{width:100%;padding:16px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:0.5rem}
+.btn-submit:hover{background:var(--navy-light)}
+.contact-info{padding-top:1rem}
+.contact-info-title{font-size:1.4rem;font-weight:600;color:var(--navy);margin-bottom:1.5rem;font-family:'Cormorant Garamond',serif}
+.contact-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
+.contact-item-icon{width:40px;height:40px;background:var(--gold-pale);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:0.9rem;flex-shrink:0;margin-top:2px}
+.contact-item-label{font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
+.contact-item-value{font-size:0.9rem;color:var(--navy);line-height:1.6}
+.contact-item-value a{color:var(--navy);text-decoration:none}
+.contact-item-value a:hover{color:var(--gold)}
+.contact-divider{border:none;border-top:1px solid var(--border);margin:2rem 0}
+.trust-badges{display:flex;flex-direction:column;gap:10px;margin-top:2rem}
+.trust-badge{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--offwhite);border-radius:3px;font-size:0.82rem;color:var(--navy)}
+.trust-badge i{color:var(--emerald);font-size:0.9rem}
+
+/* ─── FOOTER ─── */
+footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:3rem 2rem;font-size:0.82rem}
+.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.footer-brand{display:flex;align-items:center;gap:12px}
+.footer-mark{width:32px;height:32px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1rem;color:var(--navy)}
+.footer-links{display:flex;gap:2rem;flex-wrap:wrap}
+.footer-links a{color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:rgba(255,255,255,0.8)}
+.footer-copy{text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.75rem;max-width:1280px;margin:1.5rem auto 0;width:100%}
+
+/* ─── ANIMATIONS ─── */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
+.fade-up.visible{opacity:1;transform:translateY(0)}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;gap:3rem}
+  .hero-right{display:none}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .solutions-grid{grid-template-columns:1fr}
+  .solution-card+.solution-card{border-left:none;border-top:2px solid var(--navy)}
+  .reach-grid{grid-template-columns:1fr;gap:2rem}
+  .contact-grid{grid-template-columns:1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  section{padding:4rem 1.5rem}
+  .hero-content{padding:7rem 1.5rem 3rem}
+  .form-row{grid-template-columns:1fr}
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:1rem}
+  .footer-links{gap:1rem}
+}
+</style>
 </head>
 <body>
-  <header class="site-header">
-    <div class="container header-inner">
-      <div class="brand">
-        <img src="assets/logo.png" alt="Muhzijk Medicals logo" class="logo">
-        <div class="brand-text">
-          <h1>Muhzijk Medicals</h1>
-          <p class="tagline">Quality Medical Equipment for Healthcare Excellence</p>
-          <p class="subtag">Branded for Brilliance, Crafted for Care</p>
-        </div>
-      </div>
-      <nav class="nav">
-        <a href="#about">About</a>
-        <a href="#vision">Vision</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-      </nav>
+
+<!-- ─── NAVIGATION ─── -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo">
+      <div class="nav-logo-mark">M</div>
+      <span class="nav-logo-text">Muhzijk Medicals</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#solutions">Solutions</a></li>
+      <li><a href="#products">Products</a></li>
+      <li><a href="#reach">Global Reach</a></li>
+      <li><a href="#contact" class="nav-cta">Contact Sales</a></li>
+    </ul>
+    <div class="hamburger" id="hamburgerBtn" aria-label="Open menu">
+      <span></span><span></span><span></span>
     </div>
-  </header>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#solutions" class="mobile-link">Solutions</a>
+  <a href="#products" class="mobile-link">Products</a>
+  <a href="#reach" class="mobile-link">Global Reach</a>
+  <a href="#contact" class="mobile-link">Contact Sales</a>
+</div>
 
-  <main>
-    <section id="hero" class="hero container">
-      <div class="hero-content">
-        <h2>Trusted medical supplies with consistent quality</h2>
-        <p>Reliable products, attentive service, and a commitment to healthcare excellence across the UAE.</p>
-        <div class="hero-cta">
-          <a href="#products" class="btn primary">View Products</a>
-          <a href="#contact" class="btn outline">Contact Us</a>
-        </div>
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-orb hero-orb-1"></div>
+  <div class="hero-orb hero-orb-2"></div>
+  <div class="hero-content">
+    <div>
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        <span>India–UAE Medical Supply Bridge</span>
       </div>
-      <div class="hero-image">
-        <img src="assets/hero-medical.png" alt="medical supplies" />
+      <h1 class="display hero-h1">
+        Premium Medical<br/>Consumables for the<br/><em>Modern Healthcare</em><br/>Network
+      </h1>
+      <p class="hero-sub">
+        Delivering ISO 13485-compliant, hospital-grade medical consumables directly to GCC healthcare facilities — with full regulatory management and seamless logistics built in.
+      </p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn-primary">
+          Contact Sales <i class="fa-solid fa-arrow-right fa-sm"></i>
+        </a>
+        <a href="#solutions" class="btn-ghost">
+          Explore Solutions <i class="fa-solid fa-chevron-right fa-xs"></i>
+        </a>
       </div>
-    </section>
-
-    <section id="about" class="section container">
-      <h3>About Us</h3>
-      <p>Muhzijk Medicals is dedicated to delivering high-quality medical consumables and devices for healthcare providers. We focus on consistent quality, quick response times, and long-term partnerships with healthcare professionals.</p>
-    </section>
-
-    <section id="vision" class="section container two-col">
-      <div>
-        <h3>Our Vision</h3>
-        <p>To be recognized as a trusted provider of medical supplies, promoting better patient outcomes through reliable products and ethical business practices.</p>
+      <div class="cert-badges" style="margin-top:2.5rem">
+        <span class="cert-badge">ISO 13485</span>
+        <span class="cert-badge">MoHAP Compliant</span>
+        <span class="cert-badge">CEPA Advantage</span>
+        <span class="cert-badge">WHO-GMP Facility</span>
       </div>
-      <div>
-        <h3>Our Mission</h3>
-        <p>To ensure access to essential, high-quality medical products while maintaining integrity, safety, and responsiveness to the needs of healthcare partners.</p>
-      </div>
-    </section>
-
-    <section id="products" class="section container">
-      <h3>Products</h3>
-      <p class="muted">A selection of our core consumables and supplies.</p>
-      <div class="grid grid-5">
-        <div class="card">
-          <img src="assets/medical_tape.jpg" alt="Medical Tape">
-          <h4>Medical Tape</h4>
-        </div>
-        <div class="card">
-          <img src="assets/surgical_sutures.jpg" alt="Surgical Sutures">
-          <h4>Surgical Sutures</h4>
-        </div>
-        <div class="card">
-          <img src="assets/iv_dressing.jpg" alt="IV Dressings">
-          <h4>IV Dressings</h4>
-        </div>
-        <div class="card">
-          <img src="assets/wound_dressing.jpg" alt="Wound Dressings">
-          <h4>Wound Dressings</h4>
-        </div>
-        <div class="card">
-          <img src="assets/bandage.jpg" alt="Bandages">
-          <h4>Bandages</h4>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section container contact-section">
-      <h3>Contact Us</h3>
-      <p class="muted">Reach out to us — we respond to inquiries promptly.</p>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <h4>Email</h4>
-          <p><a href="mailto:Sales@muhzijkmedicals.com">Sales@muhzijkmedicals.com</a></p>
-          <p><a href="mailto:Info@muhzijkmedicals.com">Info@muhzijkmedicals.com</a></p>
-        </div>
-        <div class="contact-card">
-          <h4>Phone / WhatsApp</h4>
-          <p>UAE: <a href="tel:+971562352742">+971 562352742</a></p>
-          <p>India: <a href="tel:+918296403080">+91 8296403080</a></p>
-        </div>
-        <div class="contact-card">
-          <h4>Location</h4>
-          <p>Abu Dhabi, UAE</p>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>© 2025 Muhzijk Medicals. All rights reserved.</p>
     </div>
-  </footer>
+    <div class="hero-right">
+      <div class="hero-card-stack">
+        <div class="stat-card stat-card-main">
+          <div class="mono" style="color:rgba(255,255,255,0.4);margin-bottom:1.5rem">MUHZIJK — SUPPLY INTELLIGENCE</div>
+          <div class="stat-num">GCC</div>
+          <div class="stat-label">Primary target market</div>
+          <div style="margin-top:1.5rem;display:flex;gap:2rem">
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold-light)">UAE</div>
+              <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em">Distribution</div>
+            </div>
+            <div>
+              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold-light)">India</div>
+              <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em">Operations</div>
+            </div>
+          </div>
+        </div>
+        <div class="stat-card stat-card-2">
+          <i class="fa-solid fa-shield-halved" style="color:var(--gold-light);font-size:1.5rem;margin-bottom:0.75rem;display:block"></i>
+          <div class="stat-num" style="font-size:1.5rem">100%</div>
+          <div class="stat-label">Regulatory Managed</div>
+        </div>
+        <div class="stat-card stat-card-3">
+          <i class="fa-solid fa-plane-up" style="color:#5DCAA5;font-size:1.2rem;margin-bottom:0.75rem;display:block"></i>
+          <div class="stat-num" style="font-size:1.5rem;color:#9FE1CB">Direct</div>
+          <div class="stat-label">Air & Sea Freight</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
 
-  <script>
-    // Smooth scroll for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
-      });
-    });
-  </script>
+<!-- ─── ABOUT ─── -->
+<section id="about">
+  <div class="container">
+    <div class="fade-up">
+      <span class="section-tag">About Muhzijk Medicals</span>
+      <div class="divider"></div>
+      <h2 class="display section-title">Process Innovation at<br/>the Core of Healthcare Supply</h2>
+      <p class="section-sub">We exist to eliminate the inefficiencies that inflate procurement costs across the GCC — connecting Indian manufacturing excellence directly to the hospitals and distributors who need it most.</p>
+    </div>
+    <div class="about-grid fade-up">
+      <div class="about-visual">
+        <div class="about-main-block">
+          <div class="about-metric">
+            <div class="about-metric-num">Direct</div>
+            <div class="about-metric-label">B2B Supply Model — No Middlemen</div>
+          </div>
+          <div class="about-metric">
+            <div class="about-metric-num">GCC</div>
+            <div class="about-metric-label">Primary Distribution Territory</div>
+          </div>
+          <div style="margin-top:1.5rem">
+            <div class="mono" style="color:var(--gold-light);margin-bottom:0.75rem">CERTIFIED SUPPLY CHAIN</div>
+            <div style="display:flex;flex-wrap:wrap;gap:8px">
+              <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:4px 10px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">ISO 13485</span>
+              <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:4px 10px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">WHO-GMP</span>
+              <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:4px 10px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">CDSCO</span>
+              <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:4px 10px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">MoHAP</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-sub-block">
+          <div class="about-sub-icon"><i class="fa-solid fa-route"></i></div>
+          <div style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px">Integrated Supply Chain</div>
+          <div style="color:var(--text-muted);font-size:0.85rem;font-weight:300;line-height:1.6">From certified Indian production facilities to GCC hospital floors — fully managed, compliance-ready, and traceable.</div>
+        </div>
+      </div>
+      <div>
+        <div class="pillar">
+          <div class="pillar-icon"><i class="fa-solid fa-microscope"></i></div>
+          <div>
+            <div class="pillar-title">Clinical-Grade Standards</div>
+            <div class="pillar-text">Every product in the Muhzijk portfolio originates from WHO-GMP certified production facilities with full ISO 13485 quality management systems — meeting the exacting standards of modern hospital procurement.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <div>
+            <div class="pillar-title">Regulatory-First Approach</div>
+            <div class="pillar-text">We navigate the complete MoHAP registration process on behalf of our distribution partners in the UAE, providing all required documentation — from Free Sale Certificates to Certificates of Analysis — as a turnkey service.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><i class="fa-solid fa-globe"></i></div>
+          <div>
+            <div class="pillar-title">Strategic India–UAE Positioning</div>
+            <div class="pillar-text">With operational headquarters in Bangalore and active market presence in Abu Dhabi, we bridge two high-performing economies. The India-UAE CEPA treaty gives our partners a structural cost advantage unavailable through European or East Asian suppliers.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div>
+            <div class="pillar-title">Scalable from Day One</div>
+            <div class="pillar-text">Our model is built to scale. Beginning with high-volume clinical consumables, our expanding portfolio roadmap includes advanced wound care systems, complex medical devices, and specialized hospital-grade equipment.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── SOLUTIONS ─── -->
+<section id="solutions">
+  <div class="container">
+    <div class="fade-up">
+      <span class="section-tag">Our Solutions</span>
+      <div class="divider"></div>
+      <h2 class="display section-title">Uncompromised Quality.<br/>Delivered Directly.</h2>
+      <p class="section-sub">Three integrated capabilities that eliminate the cost and complexity of traditional GCC medical procurement.</p>
+    </div>
+    <div class="solutions-grid fade-up">
+      <div class="solution-card">
+        <div class="sc-num">01</div>
+        <div class="sc-icon"><i class="fa-solid fa-award"></i></div>
+        <div class="sc-title">Uncompromised Quality</div>
+        <div class="sc-text">All products supplied through Muhzijk Medicals meet ISO 13485 quality management standards — the global benchmark for medical device manufacturing. Every batch is traceable, certified, and clinically validated before dispatch.</div>
+        <span class="sc-tag">ISO 13485 · WHO-GMP · CDSCO</span>
+      </div>
+      <div class="solution-card">
+        <div class="sc-num">02</div>
+        <div class="sc-icon"><i class="fa-solid fa-file-shield"></i></div>
+        <div class="sc-title">Regulatory Excellence</div>
+        <div class="sc-text">We manage the complete UAE MoHAP registration lifecycle for our partners — handling documentation, compliance filings, and import approvals. Our partners receive shelf-ready, legally imported products without the administrative burden.</div>
+        <span class="sc-tag">MoHAP · UAE · GCC Compliant</span>
+      </div>
+      <div class="solution-card">
+        <div class="sc-num">03</div>
+        <div class="sc-icon"><i class="fa-solid fa-plane-departure"></i></div>
+        <div class="sc-title">Direct Logistics</div>
+        <div class="sc-text">Air and sea freight directly from Bangalore to GCC distribution facilities — with full customs documentation, Shipping Bills, and CEPA-backed duty advantages. No unnecessary intermediaries. No inflated transit costs.</div>
+        <span class="sc-tag">Air Freight · Sea Freight · CEPA</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PRODUCTS ─── -->
+<section id="products">
+  <div class="container">
+    <div class="fade-up">
+      <span class="section-tag">Product Portfolio</span>
+      <div class="divider"></div>
+      <h2 class="display section-title">High-Volume Clinical<br/>Consumables</h2>
+      <p class="section-sub">Precision-engineered medical consumables designed for the demanding environment of modern GCC hospitals and clinics.</p>
+    </div>
+    <div class="products-grid fade-up">
+
+      <!-- Product 1 -->
+      <div class="product-card">
+        <svg class="product-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="8" y="20" width="48" height="24" rx="4" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+          <rect x="14" y="26" width="36" height="12" rx="2" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
+          <line x1="20" y1="26" x2="20" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
+          <line x1="26" y1="26" x2="26" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
+          <line x1="32" y1="26" x2="32" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
+          <line x1="38" y1="26" x2="38" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
+          <line x1="44" y1="26" x2="44" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
+          <circle cx="32" cy="12" r="6" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
+          <path d="M32 8 L32 16 M28 12 L36 12" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
+        </svg>
+        <div class="product-title">Microporous Surgical Tape</div>
+        <div class="product-text">Hypoallergenic, breathable adhesive tape engineered for secure yet gentle fixation on sensitive skin. Ideal for wound closure, IV line dressing, and post-operative care settings.</div>
+        <div class="product-specs">
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> ISO 13485 certified facility</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Bi-directional easy tear</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Multiple widths available</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Minimal skin residue</div>
+        </div>
+        <div class="product-expand">
+          <i class="fa-solid fa-flask"></i> Clinical Grade
+        </div>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+        <svg class="product-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M10 32 C10 20 54 20 54 32 C54 44 10 44 10 32 Z" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
+          <path d="M16 32 C16 24 48 24 48 32 C48 40 16 40 16 32 Z" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
+          <path d="M10 28 Q32 22 54 28" stroke="rgba(201,168,76,0.4)" stroke-width="0.75" fill="none"/>
+          <path d="M10 36 Q32 42 54 36" stroke="rgba(201,168,76,0.4)" stroke-width="0.75" fill="none"/>
+          <circle cx="32" cy="32" r="5" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
+          <circle cx="32" cy="32" r="2" fill="rgba(201,168,76,0.4)"/>
+        </svg>
+        <div class="product-title">Cotton Crepe Bandage</div>
+        <div class="product-text">High-elasticity cotton crepe bandages providing graduated compression and support. Widely used in orthopaedic applications, post-surgical dressing retention, and sports injury management.</div>
+        <div class="product-specs">
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> High stretch retention</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Washable and reusable</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> 5cm–15cm widths</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> WHO-GMP production</div>
+        </div>
+        <div class="product-expand">
+          <i class="fa-solid fa-flask"></i> Clinical Grade
+        </div>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+        <svg class="product-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="14" width="40" height="36" rx="3" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
+          <rect x="18" y="20" width="28" height="24" rx="2" fill="rgba(15,123,94,0.15)" stroke="rgba(15,123,94,0.4)" stroke-width="1"/>
+          <path d="M18 26 L46 26" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
+          <path d="M18 32 L46 32" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
+          <path d="M18 38 L38 38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
+          <circle cx="48" cy="46" r="8" fill="rgba(15,123,94,0.2)" stroke="rgba(15,123,94,0.5)" stroke-width="1.5"/>
+          <path d="M48 42 L48 50 M44 46 L52 46" stroke="rgba(15,123,94,0.7)" stroke-width="1.5"/>
+        </svg>
+        <div class="product-title">Transparent IV Dressing</div>
+        <div class="product-text">Clear, semi-permeable polyurethane film dressings for secure IV catheter fixation. Allows continuous visual monitoring of the insertion site while maintaining a sterile, waterproof barrier.</div>
+        <div class="product-specs">
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Waterproof barrier film</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> 360° visual monitoring</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Sterile packed</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Breathable membrane</div>
+        </div>
+        <div class="product-expand">
+          <i class="fa-solid fa-flask"></i> Clinical Grade
+        </div>
+      </div>
+
+      <!-- Product 4 — Expanding portfolio card -->
+      <div class="product-card" style="border-style:dashed;opacity:0.7">
+        <svg class="product-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="32" cy="32" r="22" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+          <path d="M32 20 L32 44 M20 32 L44 32" stroke="rgba(201,168,76,0.5)" stroke-width="2"/>
+        </svg>
+        <div class="product-title">Expanding Portfolio</div>
+        <div class="product-text">Our product roadmap includes orthopedic padding, zinc oxide strapping tapes, advanced wound care dressings, and complex medical devices — all subject to rigorous regulatory clearance before market introduction.</div>
+        <div class="product-specs">
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Orthopaedic padding</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Zinc oxide tapes</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Advanced wound care</div>
+          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Complex medical devices</div>
+        </div>
+        <div class="product-expand" style="color:rgba(255,255,255,0.3)">
+          <i class="fa-solid fa-hourglass-half"></i> Coming Soon
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:3rem" class="fade-up">
+      <p style="color:rgba(255,255,255,0.4);font-size:0.82rem;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase">All products supplied from ISO 13485 · WHO-GMP · CDSCO certified facilities</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── GLOBAL REACH ─── -->
+<section id="reach">
+  <div class="container">
+    <div class="fade-up">
+      <span class="section-tag">Global Reach</span>
+      <div class="divider"></div>
+      <h2 class="display section-title">One Supply Chain.<br/>Two Strategic Hubs.</h2>
+      <p class="section-sub">A dual-presence model that keeps sourcing intelligence and market relationships in perfect alignment — from Bangalore to Abu Dhabi.</p>
+    </div>
+    <div class="reach-grid fade-up">
+      <div>
+        <div class="location-card">
+          <div class="location-flag">🇮🇳</div>
+          <div class="location-country">India</div>
+          <div class="location-city">Bangalore, Karnataka</div>
+          <span class="location-role">Operational Headquarters</span>
+          <div class="location-detail">Our Bangalore base manages the complete sourcing, quality assurance, regulatory documentation, and logistics coordination function. Direct relationships with WHO-GMP certified manufacturing partners ensure consistent clinical-grade output at competitive cost structures.</div>
+        </div>
+        <div class="reach-cepa" style="margin-top:1rem">
+          <div class="cepa-title">India–UAE CEPA Advantage</div>
+          <div class="cepa-text">The Comprehensive Economic Partnership Agreement between India and the UAE provides Muhzijk's distribution partners with preferential or zero duty rates on qualifying medical consumables — a structural cost advantage unavailable through European or Chinese supply chains.</div>
+          <div class="cepa-badge"><i class="fa-solid fa-shield-halved"></i> 0% Preferential Duty — CEPA Treaty</div>
+        </div>
+      </div>
+      <div>
+        <div class="location-card">
+          <div class="location-flag">🇦🇪</div>
+          <div class="location-country">United Arab Emirates</div>
+          <div class="location-city">Abu Dhabi, UAE</div>
+          <span class="location-role">Market Presence</span>
+          <div class="location-detail">Our UAE presence provides direct access to hospital procurement networks across Abu Dhabi and the wider GCC. Combining deep clinical knowledge with established distributor relationships, we bridge the gap between supply intelligence and front-line healthcare demand.</div>
+        </div>
+        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:2rem;margin-top:1rem">
+          <div style="font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem">Addressable Markets</div>
+          <div style="display:flex;flex-wrap:wrap;gap:8px">
+            <span style="background:var(--navy);color:var(--gold-light);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">🇦🇪 UAE</span>
+            <span style="background:var(--offwhite);color:var(--text-muted);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em;border:1px solid var(--border)">🇸🇦 Saudi Arabia</span>
+            <span style="background:var(--offwhite);color:var(--text-muted);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em;border:1px solid var(--border)">🇶🇦 Qatar</span>
+            <span style="background:var(--offwhite);color:var(--text-muted);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em;border:1px solid var(--border)">🇰🇼 Kuwait</span>
+            <span style="background:var(--offwhite);color:var(--text-muted);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em;border:1px solid var(--border)">🇧🇭 Bahrain</span>
+          </div>
+          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">
+            <div style="display:flex;align-items:center;gap:8px;color:var(--emerald);font-size:0.82rem;font-weight:500"><i class="fa-solid fa-circle-check"></i> MoHAP registered supply pathway</div>
+            <div style="display:flex;align-items:center;gap:8px;color:var(--emerald);font-size:0.82rem;font-weight:500;margin-top:8px"><i class="fa-solid fa-circle-check"></i> Direct hospital & distributor access</div>
+            <div style="display:flex;align-items:center;gap:8px;color:var(--emerald);font-size:0.82rem;font-weight:500;margin-top:8px"><i class="fa-solid fa-circle-check"></i> CEPA-backed duty advantages active</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── CONTACT ─── -->
+<section id="contact">
+  <div class="container">
+    <div class="fade-up">
+      <span class="section-tag">Contact Sales</span>
+      <div class="divider"></div>
+      <h2 class="display section-title">Begin a Procurement<br/>Conversation</h2>
+      <p class="section-sub">Whether you are a hospital procurement officer, medical distributor, or institutional buyer — we are ready to discuss how Muhzijk Medicals fits your supply requirements.</p>
+    </div>
+    <div class="contact-grid fade-up">
+      <div>
+        <form id="contactForm" onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="firstName">First Name</label>
+              <input class="form-input" type="text" id="firstName" placeholder="Dr. Ahmed" required/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="lastName">Last Name</label>
+              <input class="form-input" type="text" id="lastName" placeholder="Al Mansouri" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="email">Email Address</label>
+            <input class="form-input" type="email" id="email" placeholder="procurement@hospital.ae" required/>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label" for="org">Organisation</label>
+              <input class="form-input" type="text" id="org" placeholder="Reem Hospital, Abu Dhabi"/>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="role">Your Role</label>
+              <input class="form-input" type="text" id="role" placeholder="Procurement Manager"/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="interest">Area of Interest</label>
+            <select class="form-input" id="interest">
+              <option value="" disabled selected>Select product category...</option>
+              <option>Surgical Tapes — Microporous / Transparent</option>
+              <option>Crepe & Elastic Bandages</option>
+              <option>IV Fixation & Dressings</option>
+              <option>Orthopedic Padding</option>
+              <option>Advanced Wound Care (Upcoming)</option>
+              <option>Full Portfolio — General Enquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="message">Message</label>
+            <textarea class="form-input" id="message" placeholder="Describe your volume requirements, specific product specifications, or any compliance documentation you require..."></textarea>
+          </div>
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <i class="fa-solid fa-paper-plane"></i>
+            <span>Submit Enquiry</span>
+          </button>
+          <div id="formSuccess" style="display:none;margin-top:1rem;padding:1rem;background:var(--emerald-light);border-radius:3px;color:var(--emerald);font-size:0.88rem;display:flex;align-items:center;gap:8px">
+            <i class="fa-solid fa-circle-check"></i> Thank you. Our sales team will be in touch within 24 hours.
+          </div>
+        </form>
+      </div>
+      <div class="contact-info">
+        <div class="contact-info-title">Get in Touch</div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <div>
+            <div class="contact-item-label">Registered Address</div>
+            <div class="contact-item-value">U101 Oxford Tower, 139/88<br/>HAL Old Airport Road, H.A.L II Stage<br/>Bangalore North — 560008<br/>Karnataka, India</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-value">
+              <a href="mailto:sales@muhzijkmedicals.com">sales@muhzijkmedicals.com</a><br/>
+              <a href="mailto:info@muhzijkmedicals.com">info@muhzijkmedicals.com</a>
+            </div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+          <div>
+            <div class="contact-item-label">Phone & WhatsApp</div>
+            <div class="contact-item-value">
+              🇮🇳 India: <a href="tel:+91XXXXXXXX">+91 8296403080</a><br/>
+              🇦🇪 UAE: <a href="tel:+971XXXXXXX">+971 544204705</a>
+            </div>
+          </div>
+        </div>
+        <hr class="contact-divider"/>
+        <div class="trust-badges">
+          <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i> ISO 13485 Certified Supply Chain</div>
+          <div class="trust-badge"><i class="fa-solid fa-file-circle-check"></i> MoHAP Registration Managed</div>
+          <div class="trust-badge"><i class="fa-solid fa-plane"></i> Direct Air & Sea Freight to GCC</div>
+          <div class="trust-badge"><i class="fa-solid fa-handshake"></i> India–UAE CEPA Trade Partner</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FOOTER ─── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-mark">M</div>
+      <div>
+        <div style="color:rgba(255,255,255,0.8);font-weight:500;font-size:0.88rem">Muhzijk Medical Supplies LLP</div>
+        <div style="font-size:0.72rem;margin-top:2px;font-family:'DM Mono',monospace;letter-spacing:0.04em">muhzijkmedicals.com</div>
+      </div>
+    </div>
+    <div class="footer-links">
+      <a href="#about">About</a>
+      <a href="#solutions">Solutions</a>
+      <a href="#products">Products</a>
+      <a href="#reach">Global Reach</a>
+      <a href="#contact">Contact</a>
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+  <div class="footer-copy">
+    <span>© <span id="year"></span> Muhzijk Medical Supplies LLP. All rights reserved. &nbsp;·&nbsp; Branded for Brilliance, Crafted for Care &nbsp;·&nbsp; Bangalore, India &nbsp;·&nbsp; muhzijkmedicals.com</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  navbar.classList.toggle('scrolled', window.scrollY > 50);
+});
+
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburgerBtn.addEventListener('click', () => {
+  mobileMenu.classList.toggle('open');
+});
+document.querySelectorAll('.mobile-link').forEach(link => {
+  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+});
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Sending...</span>';
+  btn.disabled = true;
+  setTimeout(() => {
+    btn.innerHTML = '<i class="fa-solid fa-circle-check"></i><span>Enquiry Sent</span>';
+    btn.style.background = 'var(--emerald)';
+    const successDiv = document.getElementById('formSuccess');
+    successDiv.style.display = 'flex';
+    document.getElementById('contactForm').reset();
+  }, 1400);
+}
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+</script>
 </body>
 </html>
+
+
