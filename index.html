@@ -79,6 +79,37 @@ section{padding:5rem 2rem}
 .form-input{width:100%;padding:14px;margin-bottom:1rem;border-radius:3px;border:none;font-family:'DM Sans',sans-serif;}
 .btn-submit{background:var(--gold);color:var(--navy);padding:14px 24px;font-weight:600;border:none;border-radius:3px;cursor:pointer;width:100%;text-transform:uppercase;letter-spacing:0.05em;}
 footer{background:#08132b;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:0.8rem;}
+/* ─── MOBILE RESPONSIVENESS FIXES ─── */
+@media (max-width: 768px) {
+  /* 1. Stack the contact section (1 column instead of 2) */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  
+  /* 2. Adjust the Navigation Bar so it doesn't squish */
+  .nav-inner {
+    flex-direction: column;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+  .nav-links {
+    gap: 1rem;
+  }
+  
+  /* 3. Scale down the Hero text and padding for phones */
+  .hero-h1 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  }
+  .hero-content {
+    padding: 2rem 1rem;
+  }
+  section {
+    padding: 3rem 1.2rem;
+  }
+}
 </style>
 </head>
 <body>
