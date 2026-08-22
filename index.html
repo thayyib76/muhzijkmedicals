@@ -32,560 +32,172 @@ body{font-family:'DM Sans',sans-serif;color:var(--navy);background:var(--white);
 
 /* ─── TYPOGRAPHY ─── */
 .display{font-family:'Cormorant Garamond',serif;font-weight:300;letter-spacing:-0.02em;line-height:1.05}
-.serif{font-family:'Cormorant Garamond',serif}
 .mono{font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.08em}
 
 /* ─── NAV ─── */
 #navbar{position:fixed;top:0;left:0;right:0;z-index:100;transition:all 0.4s ease;padding:0}
 #navbar.scrolled{background:rgba(11,27,62,0.97);backdrop-filter:blur(16px);box-shadow:0 1px 40px rgba(0,0,0,0.3)}
 .nav-inner{max-width:1280px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:80px}
-.nav-logo{display:flex;align-items:center;text-decoration:none;height:100%}
 .nav-logo-img{height:52px;width:auto;object-fit:contain;display:block}
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none}
 .nav-links a{color:rgba(255,255,255,0.75);text-decoration:none;font-size:0.82rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;transition:color 0.2s;position:relative}
-.nav-links a::after{content:'';position:absolute;bottom:-4px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.3s}
 .nav-links a:hover{color:#fff}
-.nav-links a:hover::after{width:100%}
-.nav-cta{background:var(--gold);color:var(--navy)!important;padding:10px 22px!important;border-radius:2px;font-weight:600!important;transition:background 0.2s!important}
+.nav-cta{background:var(--gold)!important;color:var(--navy)!important;padding:10px 22px!important;border-radius:2px;font-weight:600!important;}
 .nav-cta:hover{background:var(--gold-light)!important}
-.nav-cta::after{display:none!important}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{width:24px;height:1.5px;background:#fff;transition:all 0.3s}
-.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;background:var(--navy);padding:2rem;z-index:99;border-top:1px solid rgba(255,255,255,0.1)}
-.mobile-menu.open{display:block}
-.mobile-menu a{display:block;color:rgba(255,255,255,0.8);text-decoration:none;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,0.08);font-size:0.9rem;letter-spacing:0.04em;text-transform:uppercase}
 
-/* ─── HERO ─── */
-#hero{min-height:100vh;background:var(--navy);position:relative;display:flex;align-items:center;overflow:hidden}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(201,168,76,0.06) 1px,transparent 1px),linear-gradient(90deg,rgba(201,168,76,0.06) 1px,transparent 1px);background-size:80px 80px;opacity:0.6}
-.hero-orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.12}
-.hero-orb-1{width:600px;height:600px;background:var(--gold);top:-200px;right:-100px}
-.hero-orb-2{width:400px;height:400px;background:#1A5CB0;bottom:-100px;left:-100px}
-.hero-content{position:relative;z-index:2;max-width:1280px;margin:0 auto;padding:8rem 2rem 4rem;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.hero-tag{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(201,168,76,0.4);padding:6px 16px;border-radius:40px;margin-bottom:2rem;color:var(--gold-light);font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase}
-.hero-tag-dot{width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
-@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.5;transform:scale(0.8)}}
-.hero-h1{font-size:clamp(2.8rem,5vw,4.8rem);color:#fff;margin-bottom:1.5rem;line-height:1.02}
+/* ─── HERO (SIMPLIFIED) ─── */
+#hero{min-height:70vh;background:var(--navy);position:relative;display:flex;align-items:center;justify-content:center;text-align:center;padding-top:80px;}
+.hero-content{position:relative;z-index:2;max-width:900px;margin:0 auto;padding:4rem 2rem;}
+.hero-h1{font-size:clamp(2.5rem,5vw,4.5rem);color:#fff;margin-bottom:1.5rem;}
 .hero-h1 em{color:var(--gold-light);font-style:normal}
-.hero-sub{color:rgba(255,255,255,0.6);font-size:1.05rem;line-height:1.75;margin-bottom:2.5rem;max-width:480px;font-weight:300}
-.hero-actions{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
-.btn-primary{display:inline-flex;align-items:center;gap:10px;background:var(--gold);color:var(--navy);padding:14px 32px;border-radius:2px;font-weight:600;font-size:0.88rem;letter-spacing:0.04em;text-decoration:none;transition:all 0.2s;text-transform:uppercase}
-.btn-primary:hover{background:var(--gold-light);transform:translateY(-1px)}
-.btn-ghost{display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.7);font-size:0.88rem;text-decoration:none;transition:color 0.2s;letter-spacing:0.04em;text-transform:uppercase}
-.btn-ghost:hover{color:#fff}
-.hero-right{position:relative}
-.hero-card-stack{position:relative;height:420px}
-.stat-card{position:absolute;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:12px;backdrop-filter:blur(20px);padding:1.5rem;color:#fff}
-.stat-card-main{width:280px;top:0;left:0;right:0;margin:0 auto}
-.stat-card-2{width:220px;bottom:60px;right:0;background:rgba(201,168,76,0.12);border-color:rgba(201,168,76,0.3)}
-.stat-card-3{width:200px;bottom:0;left:0;background:rgba(15,123,94,0.15);border-color:rgba(15,123,94,0.3)}
-.stat-num{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:300;color:var(--gold-light)}
-.stat-label{font-size:0.78rem;color:rgba(255,255,255,0.6);margin-top:4px;letter-spacing:0.06em;text-transform:uppercase}
-.cert-badges{display:flex;gap:8px;flex-wrap:wrap;margin-top:1rem}
-.cert-badge{font-family:'DM Mono',monospace;font-size:0.68rem;padding:4px 10px;border-radius:3px;letter-spacing:0.06em;border:1px solid rgba(201,168,76,0.5);color:var(--gold-light)}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;color:rgba(255,255,255,0.4);font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;z-index:2}
-.scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,rgba(201,168,76,0.5),transparent);animation:scrollAnim 2s infinite}
-@keyframes scrollAnim{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+.hero-sub{color:rgba(255,255,255,0.6);font-size:1.1rem;line-height:1.6;margin-bottom:2.5rem;font-weight:300}
+.cert-badges{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:2rem;}
+.cert-badge{font-family:'DM Mono',monospace;font-size:0.75rem;padding:6px 14px;border-radius:3px;letter-spacing:0.06em;border:1px solid rgba(201,168,76,0.5);color:var(--gold-light)}
 
 /* ─── SECTION BASE ─── */
-section{padding:6rem 2rem}
+section{padding:5rem 2rem}
 .container{max-width:1280px;margin:0 auto}
-.section-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--emerald);margin-bottom:1rem;padding:4px 12px;background:var(--emerald-light);border-radius:2px}
 .section-title{font-size:clamp(2rem,3.5vw,3rem);line-height:1.1;margin-bottom:1.25rem}
-.section-sub{color:var(--text-muted);font-size:1.05rem;line-height:1.75;font-weight:300;max-width:600px}
 .divider{width:48px;height:2px;background:var(--gold);margin-bottom:2rem}
 
-/* ─── ABOUT ─── */
-#about{background:var(--offwhite)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center;margin-top:4rem}
-.about-visual{position:relative}
-.about-main-block{background:var(--navy);border-radius:4px;padding:3rem;color:#fff;position:relative;overflow:hidden}
-.about-main-block::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(201,168,76,0.15)}
-.about-metric{margin-bottom:2rem}
-.about-metric-num{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold-light);line-height:1}
-.about-metric-label{color:rgba(255,255,255,0.6);font-size:0.82rem;margin-top:4px;letter-spacing:0.06em;text-transform:uppercase}
-.about-sub-block{background:#fff;border:1px solid var(--border);border-radius:4px;padding:1.5rem;margin-top:1rem}
-.about-sub-icon{width:40px;height:40px;background:var(--gold-pale);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:1rem;color:var(--gold);font-size:1rem}
-.pillar{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
-.pillar-icon{width:44px;height:44px;border-radius:3px;background:var(--navy);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem;flex-shrink:0}
-.pillar-title{font-weight:600;font-size:0.9rem;margin-bottom:4px;color:var(--navy)}
-.pillar-text{color:var(--text-muted);font-size:0.88rem;line-height:1.6;font-weight:300}
-
-/* ─── SOLUTIONS ─── */
-#solutions{background:#fff}
-.solutions-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:4rem;border:2px solid var(--navy);border-radius:4px;overflow:hidden}
-.solution-card{padding:3rem 2.5rem;background:#fff;transition:background 0.3s;cursor:default}
-.solution-card:hover{background:var(--navy)}
-.solution-card:hover .sc-num{color:rgba(255,255,255,0.15)}
-.solution-card:hover .sc-icon{background:rgba(201,168,76,0.2);color:var(--gold-light)}
-.solution-card:hover .sc-title{color:#fff}
-.solution-card:hover .sc-text{color:rgba(255,255,255,0.6)}
-.solution-card:hover .sc-tag{border-color:rgba(201,168,76,0.4);color:var(--gold-light)}
-.solution-card+.solution-card{border-left:2px solid var(--navy)}
-.sc-num{font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;color:rgba(11,27,62,0.06);line-height:1;margin-bottom:1rem;transition:color 0.3s}
-.sc-icon{width:52px;height:52px;border-radius:3px;background:var(--gold-pale);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.3rem;margin-bottom:1.5rem;transition:all 0.3s}
-.sc-title{font-size:1.25rem;font-weight:600;margin-bottom:0.75rem;color:var(--navy);transition:color 0.3s}
-.sc-text{color:var(--text-muted);font-size:0.88rem;line-height:1.7;font-weight:300;margin-bottom:1.5rem;transition:color 0.3s}
-.sc-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.68rem;padding:4px 10px;border:1px solid var(--border);border-radius:2px;color:var(--text-muted);letter-spacing:0.06em;transition:all 0.3s}
-
 /* ─── PRODUCTS ─── */
-#products{background:var(--navy);padding:6rem 2rem}
-#products .section-tag{background:rgba(201,168,76,0.15);color:var(--gold-light)}
-#products .section-title{color:#fff}
-#products .section-sub{color:rgba(255,255,255,0.55)}
-#products .divider{background:var(--gold)}
-.products-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;margin-top:4rem}
-.product-card{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:2.5rem;transition:all 0.3s;position:relative;overflow:hidden}
-.product-card:hover{background:rgba(255,255,255,0.08);border-color:rgba(201,168,76,0.4);transform:translateY(-4px)}
-.product-card::before{content:'';position:absolute;top:0;left:0;width:3px;height:0;background:var(--gold);transition:height 0.3s}
-.product-card:hover::before{height:100%}
-.product-icon{width:64px;height:64px;margin-bottom:2rem;opacity:0.9}
-.product-title{color:#fff;font-size:1.15rem;font-weight:600;margin-bottom:0.75rem}
-.product-text{color:rgba(255,255,255,0.5);font-size:0.88rem;line-height:1.7;font-weight:300;margin-bottom:1.5rem}
-.product-specs{display:flex;flex-direction:column;gap:6px}
-.product-spec{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,0.4);font-size:0.78rem;font-family:'DM Mono',monospace;letter-spacing:0.04em}
-.product-spec i{color:var(--emerald);font-size:0.7rem}
-.product-expand{margin-top:2rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);color:var(--gold-light);font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;display:flex;align-items:center;gap:6px}
+#products{background:var(--offwhite);}
+.products-grid{display:grid;grid-template-columns:1fr;gap:3rem;margin-top:3rem}
+@media(min-width: 800px) { .products-grid{grid-template-columns:repeat(2, 1fr);} }
+.product-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:2.5rem;transition:all 0.3s;box-shadow:0 4px 6px rgba(0,0,0,0.02);}
+.product-card:hover{box-shadow:0 12px 24px rgba(11,27,62,0.08);transform:translateY(-4px);border-color:var(--gold);}
+.product-img-wrapper{width:100%;height:340px;background:#FAFAF8;border-radius:4px;margin-bottom:1.5rem;display:flex;align-items:center;justify-content:center;overflow:hidden;border:1px solid rgba(0,0,0,0.03);}
+.product-img{width:100%;height:100%;padding:0;object-fit:contain; mix-blend-mode: darken; transform: scale(1.1);}
+.product-tag{display:inline-block;font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.1em;background:var(--navy);color:var(--gold-light);padding:3px 8px;border-radius:2px;margin-bottom:10px;}
+.product-title{color:var(--navy);font-size:1.2rem;font-weight:600;margin-bottom:0.5rem;font-family:'Cormorant Garamond',serif;}
+.product-text{color:var(--text-muted);font-size:0.85rem;line-height:1.5;margin-bottom:1.5rem}
 
-/* ─── GLOBAL REACH ─── */
-#reach{background:var(--offwhite)}
-.reach-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;margin-top:4rem}
-.location-card{background:#fff;border:1px solid var(--border);border-radius:8px;padding:2.5rem;position:relative;transition:box-shadow 0.3s}
-.location-card:hover{box-shadow:0 20px 60px rgba(11,27,62,0.1)}
-.location-flag{font-size:2rem;margin-bottom:1rem}
-.location-country{font-family:'DM Mono',monospace;font-size:0.72rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:0.5rem}
-.location-city{font-size:1.5rem;font-weight:600;color:var(--navy);margin-bottom:1rem;font-family:'Cormorant Garamond',serif}
-.location-role{display:inline-block;padding:4px 12px;background:var(--navy);color:var(--gold-light);font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.08em;border-radius:2px;margin-bottom:1.5rem}
-.location-detail{color:var(--text-muted);font-size:0.88rem;line-height:1.7;font-weight:300}
-.reach-connector{display:flex;flex-direction:column;align-items:center;gap:1.5rem}
-.connector-line{flex:1;width:1px;background:linear-gradient(to bottom,transparent,var(--gold),transparent)}
-.connector-icon{width:50px;height:50px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.1rem}
-.reach-cepa{background:linear-gradient(135deg,var(--navy),var(--navy-mid));border-radius:8px;padding:2rem;color:#fff;margin-top:2rem}
-.cepa-title{font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-light);margin-bottom:0.5rem}
-.cepa-text{color:rgba(255,255,255,0.6);font-size:0.88rem;line-height:1.6;font-weight:300}
-.cepa-badge{display:inline-flex;align-items:center;gap:6px;margin-top:1rem;background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);padding:6px 14px;border-radius:20px;color:var(--gold-light);font-size:0.75rem;font-family:'DM Mono',monospace;letter-spacing:0.06em}
-
-/* ─── CONTACT ─── */
-#contact{background:#fff}
-.contact-grid{display:grid;grid-template-columns:5fr 4fr;gap:5rem;margin-top:4rem;align-items:start}
-.form-group{margin-bottom:1.5rem}
-.form-label{display:block;font-size:0.78rem;font-weight:500;letter-spacing:0.08em;text-transform:uppercase;color:var(--navy);margin-bottom:8px;font-family:'DM Mono',monospace}
-.form-input{width:100%;padding:14px 16px;border:1px solid rgba(11,27,62,0.15);border-radius:3px;font-family:'DM Sans',sans-serif;font-size:0.9rem;color:var(--navy);background:var(--offwhite);transition:all 0.2s;outline:none}
-.form-input:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(201,168,76,0.1)}
-.form-input::placeholder{color:#9CA3AF}
-textarea.form-input{resize:vertical;min-height:140px}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.btn-submit{width:100%;padding:16px;background:var(--navy);color:#fff;border:none;border-radius:3px;font-family:'DM Sans',sans-serif;font-size:0.88rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:all 0.3s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:0.5rem}
-.btn-submit:hover{background:var(--navy-light)}
-.contact-info{padding-top:1rem}
-.contact-info-title{font-size:1.4rem;font-weight:600;color:var(--navy);margin-bottom:1.5rem;font-family:'Cormorant Garamond',serif}
-.contact-item{display:flex;gap:1rem;margin-bottom:1.5rem;align-items:flex-start}
-.contact-item-icon{width:40px;height:40px;background:var(--gold-pale);border-radius:3px;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:0.9rem;flex-shrink:0;margin-top:2px}
-.contact-item-label{font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px}
-.contact-item-value{font-size:0.9rem;color:var(--navy);line-height:1.6}
-.contact-item-value a{color:var(--navy);text-decoration:none}
-.contact-item-value a:hover{color:var(--gold)}
-.contact-divider{border:none;border-top:1px solid var(--border);margin:2rem 0}
-.trust-badges{display:flex;flex-direction:column;gap:10px;margin-top:2rem}
-.trust-badge{display:flex;align-items:center;gap:10px;padding:12px 16px;background:var(--offwhite);border-radius:3px;font-size:0.82rem;color:var(--navy)}
-.trust-badge i{color:var(--emerald);font-size:0.9rem}
-
-/* ─── FOOTER ─── */
-footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:3rem 2rem;font-size:0.82rem}
-.footer-inner{max-width:1280px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.footer-brand{display:flex;align-items:center;gap:12px}
-.footer-mark{width:32px;height:32px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1rem;color:var(--navy)}
-.footer-links{display:flex;gap:2rem;flex-wrap:wrap}
-.footer-links a{color:rgba(255,255,255,0.4);text-decoration:none;transition:color 0.2s}
-.footer-links a:hover{color:rgba(255,255,255,0.8)}
-.footer-copy{text-align:center;margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,0.08);font-size:0.75rem;max-width:1280px;margin:1.5rem auto 0;width:100%}
-
-/* ─── ANIMATIONS ─── */
-.fade-up{opacity:0;transform:translateY(30px);transition:opacity 0.7s ease,transform 0.7s ease}
-.fade-up.visible{opacity:1;transform:translateY(0)}
-
-/* ─── RESPONSIVE ─── */
-@media(max-width:1024px){
-  .hero-content{grid-template-columns:1fr;gap:3rem}
-  .hero-right{display:none}
-  .about-grid{grid-template-columns:1fr;gap:3rem}
-  .solutions-grid{grid-template-columns:1fr}
-  .solution-card+.solution-card{border-left:none;border-top:2px solid var(--navy)}
-  .reach-grid{grid-template-columns:1fr;gap:2rem}
-  .contact-grid{grid-template-columns:1fr}
-}
-@media(max-width:768px){
-  .nav-links{display:none}
-  .hamburger{display:flex}
-  section{padding:4rem 1.5rem}
-  .hero-content{padding:7rem 1.5rem 3rem}
-  .form-row{grid-template-columns:1fr}
-  .footer-inner{flex-direction:column;align-items:flex-start;gap:1rem}
-  .footer-links{gap:1rem}
-}
+/* ─── CONTACT & FOOTER ─── */
+#contact{background:var(--navy);color:#fff;}
+#contact .section-title{color:#fff;}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;margin-top:3rem;}
+.form-input{width:100%;padding:14px;margin-bottom:1rem;border-radius:3px;border:none;font-family:'DM Sans',sans-serif;}
+.btn-submit{background:var(--gold);color:var(--navy);padding:14px 24px;font-weight:600;border:none;border-radius:3px;cursor:pointer;width:100%;text-transform:uppercase;letter-spacing:0.05em;}
+footer{background:#08132b;color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:0.8rem;}
 </style>
 </head>
 <body>
 
-<!-- ─── NAVIGATION ─── -->
-<nav id="navbar">
+<!-- ─── NAV ─── -->
+<nav id="navbar" class="scrolled">
   <div class="nav-inner">
-	<a href="#hero" class="nav-logo">
+	<a href="#" class="nav-logo">
 	  <img src="assets/logo_trans_1.png" alt="Muhzijk Medicals Logo" class="nav-logo-img"/>
 	</a>
     <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#solutions">Solutions</a></li>
-      <li><a href="#products">Products</a></li>
-      <li><a href="#reach">Global Reach</a></li>
-      <li><a href="#contact" class="nav-cta">Contact Sales</a></li>
+      <li><a href="#products">Our Catalog</a></li>
+      <li><a href="#contact" class="nav-cta">Request Quote</a></li>
     </ul>
-	<div class="hamburger" id="hamburgerBtn" role="button" tabindex="0" aria-label="Open menu">
-      <span></span><span></span><span></span>
-    </div>
   </div>
 </nav>
-<div class="mobile-menu" id="mobileMenu">
-    <ul class="mobile-nav-links">
-        <li><a href="#about" class="mobile-link">About</a></li>
-        <li><a href="#solutions" class="mobile-link">Solutions</a></li>
-        <li><a href="#products" class="mobile-link">Products</a></li>
-		<li><a href="#Reach" class="mobile-link">Global Reach</a></li>
-        <li><a href="#contact" class="mobile-link">Contact Sales</a></li>
-    </ul>
-</div>
 
 <!-- ─── HERO ─── -->
 <section id="hero">
-  <div class="hero-grid"></div>
-  <div class="hero-orb hero-orb-1"></div>
-  <div class="hero-orb hero-orb-2"></div>
   <div class="hero-content">
-    <div>
-      <div class="hero-tag">
-        <span class="hero-tag-dot"></span>
-        <span>UNIFIED MEDICAL SUPPLY PIPELINE</span>
-      </div>
-      <h1 class="display hero-h1">
-        Premium Medical<br/>Consumables for the<br/><em>Modern Healthcare</em><br/>Network
-      </h1>
-      <p class="hero-sub">
-        Delivering ISO 13485-compliant, hospital-grade medical consumables seamlessly to healthcare networks — with full quality validation and optimized logistics built in.
-      </p>
-      <div class="hero-actions">
-        <a href="#contact" class="btn-primary">
-          Contact Sales <i class="fa-solid fa-arrow-right fa-sm"></i>
-        </a>
-        <a href="#solutions" class="btn-ghost">
-          Explore Solutions <i class="fa-solid fa-chevron-right fa-xs"></i>
-        </a>
-      </div>
-      <div class="cert-badges" style="margin-top:2.5rem">
-        <span class="cert-badge">ISO 13485</span>
-        <span class="cert-badge">CDSCO Compliant</span>
-        <span class="cert-badge">Optimized Cost</span>
-        <span class="cert-badge">WHO-GMP Facility</span>
-      </div>
+    <div class="cert-badges">
+      <span class="cert-badge">ISO 13485</span>
+      <span class="cert-badge">CDSCO Compliant</span>
+      <span class="cert-badge">WHO-GMP Facility</span>
     </div>
-    <div class="hero-right">
-      <div class="hero-card-stack">
-        <div class="stat-card stat-card-main">
-          <div class="mono" style="color:rgba(255,255,255,0.4);margin-bottom:1.5rem">MUHZIJK — SUPPLY INTELLIGENCE</div>
-          <div class="stat-num">PAN-INDIA</div>
-          <div class="stat-label">Primary target market</div>
-          <div style="margin-top:1.5rem;display:flex;gap:2rem">
-            <div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold-light)">DOMESTIC</div>
-              <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em">Distribution</div>
-            </div>
-            <div>
-              <div style="font-family:'Cormorant Garamond',serif;font-size:1.8rem;font-weight:300;color:var(--gold-light)">CENTRAL</div>
-              <div style="font-size:0.72rem;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.06em">Operations</div>
-            </div>
-          </div>
-        </div>
-        <div class="stat-card stat-card-2">
-          <i class="fa-solid fa-shield-halved" style="color:var(--gold-light);font-size:1.5rem;margin-bottom:0.75rem;display:block"></i>
-          <div class="stat-num" style="font-size:1.5rem">100%</div>
-          <div class="stat-label">REGULATORY COMPLIANT</div>
-        </div>
-        <div class="stat-card stat-card-3">
-          <i class="fa-solid fa-plane-up" style="color:#5DCAA5;font-size:1.2rem;margin-bottom:0.75rem;display:block"></i>
-          <div class="stat-num" style="font-size:1.5rem;color:#9FE1CB">End-to-End</div>
-          <div class="stat-label">ENTERPRISE LOGISTICS</div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="scroll-line"></div>
-    <span>Scroll</span>
+    <h1 class="display hero-h1">Clinical-Grade Consumables.<br/><em>Direct to Hospitals.</em></h1>
+    <p class="hero-sub">Empowering modern healthcare systems with premium, clinical-grade consumables. From essential wound care to advanced surgical devices, we ensure uncompromised quality and seamless procurement</p>
   </div>
 </section>
 
-<!-- ─── ABOUT ─── -->
-<section id="about">
-  <div class="container">
-    <div class="fade-up">
-      <span class="section-tag">About Muhzijk Medicals</span>
-      <div class="divider"></div>
-      <h2 class="display section-title">Process Innovation at<br/>the Core of Healthcare Supply</h2>
-      <p class="section-sub">We exist to eliminate the structural inefficiencies that inflate procurement costs across healthcare systems — connecting advanced manufacturing excellence directly to the hospitals and clinical networks that need it most.</p>
-    </div>
-    <div class="about-grid fade-up">
-      <div class="about-visual">
-        <div class="about-main-block">
-          <div class="about-metric">
-            <div class="about-metric-num">End-to-End Solutions</div>
-            <div class="about-metric-label">B2B Supply Model — Integrated</div>
-          </div>
-          <div class="about-metric">
-            <div class="about-metric-num">PAN-INDIA</div>
-            <div class="about-metric-label">PRIMARY DISTRIBUTION NETWORK</div>
-          </div>
-          <div style="margin-top:1.5rem">
-            <div class="mono" style="color:var(--gold-light);margin-bottom:0.75rem">CERTIFIED SUPPLY CHAIN</div>
-            <div style="display:flex;flex-wrap:wrap;gap:8px">
-              <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:4px 10px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">ISO 13485</span>
-              <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:4px 10px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">WHO-GMP</span>
-              <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:4px 10px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">CDSCO</span>
-              <span style="background:rgba(201,168,76,0.15);border:1px solid rgba(201,168,76,0.3);color:var(--gold-light);font-size:0.72rem;padding:4px 10px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">QUALITY ASSURED</span>
-            </div>
-          </div>
-        </div>
-        <div class="about-sub-block">
-          <div class="about-sub-icon"><i class="fa-solid fa-route"></i></div>
-          <div style="font-weight:600;font-size:0.9rem;color:var(--navy);margin-bottom:4px">Integrated Supply Chain</div>
-          <div style="color:var(--text-muted);font-size:0.85rem;font-weight:300;line-height:1.6">From certified production facilities to hospital floors — fully managed, compliance-ready, and traceable.</div>
-        </div>
-      </div>
-      <div>
-        <div class="pillar">
-          <div class="pillar-icon"><i class="fa-solid fa-microscope"></i></div>
-          <div>
-            <div class="pillar-title">Clinical-Grade Standards</div>
-            <div class="pillar-text">Every product in the Muhzijk portfolio originates from WHO-GMP certified production facilities with full ISO 13485 quality management systems — meeting the exacting standards of modern institutional procurement.</div>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon"><i class="fa-solid fa-scale-balanced"></i></div>
-          <div>
-            <div class="pillar-title">Regulatory-First Approach</div>
-            <div class="pillar-text">We manage the complete compliance portfolio across our domestic distribution channels, providing all required validation data — from comprehensive technical dossiers to Certificates of Analysis — as a streamlined enterprise service.</div>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon"><i class="fa-solid fa-globe"></i></div>
-          <div>
-            <div class="pillar-title">Strategic Enterprise Positioning</div>
-            <div class="pillar-text">With our operational headquarters centrally located in Bangalore's technology hub, we efficiently orchestrate nationwide logistics. Our direct framework gives healthcare partners a structural cost and volume advantage unavailable through traditional multi-tiered distribution channels.</div>
-          </div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon"><i class="fa-solid fa-chart-line"></i></div>
-          <div>
-            <div class="pillar-title">Scalable from Day One</div>
-            <div class="pillar-text">Our model is built to scale. Beginning with high-volume clinical consumables, our expanding portfolio roadmap includes advanced wound care systems, complex medical devices, and specialized hospital-grade equipment.</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ─── SOLUTIONS ─── -->
-<section id="solutions">
-  <div class="container">
-    <div class="fade-up">
-      <span class="section-tag">Our Solutions</span>
-      <div class="divider"></div>
-      <h2 class="display section-title">Uncompromised Quality.<br/>Delivered Seamlessly.</h2>
-      <p class="section-sub">Three integrated capabilities that eliminate the cost and complexity of traditional medical procurement.</p>
-    </div>
-    <div class="solutions-grid fade-up">
-      <div class="solution-card">
-        <div class="sc-num">01</div>
-        <div class="sc-icon"><i class="fa-solid fa-award"></i></div>
-        <div class="sc-title">Uncompromised Quality</div>
-        <div class="sc-text">All products supplied through Muhzijk Medicals meet ISO 13485 quality management standards — the global benchmark for medical device manufacturing. Every batch is traceable, certified, and clinically validated before dispatch.</div>
-        <span class="sc-tag">ISO 13485 · WHO-GMP · CDSCO</span>
-      </div>
-      <div class="solution-card">
-        <div class="sc-num">02</div>
-        <div class="sc-icon"><i class="fa-solid fa-file-shield"></i></div>
-        <div class="sc-title">Regulatory Excellence</div>
-        <div class="sc-text">We maintain an extensive, audit-ready compliance framework for all our partners — handling rigorous technical documentation, validation filings, and quality benchmarks. Our enterprise partners receive shelf-ready, legally compliant products without the administrative burden.</div>
-        <span class="sc-tag">TECHNICAL DOSSIERS · VALIDATED · Compliant</span>
-      <div class="solution-card">
-        <div class="sc-num">03</div>
-        <div class="sc-icon"><i class="fa-solid fa-truck"></i></div>
-        <div class="sc-title">Optimized Logistics</div>
-        <div class="sc-text">Efficiently orchestrated transport directly from our Bangalore hub to institutional distribution networks — complete with full transit documentation, certified packaging, and standardized cargo protection. We ensure streamlined handovers with no inflated transit costs.</div>
-        <span class="sc-tag">OVERLAND · CARGO SECURE · FREIGHT READY</span>
-      </div>
-    </div>
-	</div>
-  </div>
-</section>
-
-<!-- ─── PRODUCTS ─── -->
+<!-- ─── PRODUCTS CATALOG ─── -->
 <section id="products">
   <div class="container">
-    <div class="fade-up">
-      <span class="section-tag">Product Portfolio</span>
-      <div class="divider"></div>
-      <h2 class="display section-title">High-Volume Clinical<br/>Consumables</h2>
-      <p class="section-sub">Precision-engineered medical consumables designed for the demanding environment of modern institutional hospitals and clinics.</p>
-    </div>
-    <div class="products-grid fade-up">
+    <div class="divider"></div>
+    <h2 class="display section-title" style="color:var(--navy);">Institutional Product Catalog</h2>
+    <p style="color:var(--text-muted); max-width: 600px;">All items are available for immediate B2B institutional sampling and automated monthly rate contracts.</p>
+    
+    <div class="products-grid">
 
-      <!-- Product 1 -->
+      <!-- PRODUCT 1: NGPOR -->
       <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="8" y="20" width="48" height="24" rx="4" fill="rgba(201,168,76,0.15)" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
-          <rect x="14" y="26" width="36" height="12" rx="2" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.4)" stroke-width="1"/>
-          <line x1="20" y1="26" x2="20" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
-          <line x1="26" y1="26" x2="26" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
-          <line x1="32" y1="26" x2="32" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
-          <line x1="38" y1="26" x2="38" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
-          <line x1="44" y1="26" x2="44" y2="38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
-          <circle cx="32" cy="12" r="6" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
-          <path d="M32 8 L32 16 M28 12 L36 12" stroke="rgba(201,168,76,0.5)" stroke-width="1"/>
-        </svg>
-        <div class="product-title">Microporous Surgical Tape</div>
-        <div class="product-text">Hypoallergenic, breathable adhesive tape engineered for secure yet gentle fixation on sensitive skin. Ideal for wound closure, IV line dressing, and post-operative care settings.</div>
-        <div class="product-specs">
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> ISO 13485 certified facility</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Bi-directional easy tear</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Multiple widths available</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Minimal skin residue</div>
+        <div class="product-img-wrapper">
+          <img src="assets/ngpor.png" alt="NGPOR Microporous Tape" class="product-img" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Coming+Soon'">
         </div>
-        <div class="product-expand">
-          <i class="fa-solid fa-flask"></i> Clinical Grade
-        </div>
+        <span class="product-tag">NGPOR™</span>
+        <div class="product-title">Non-Woven Surgical Paper Tape</div>
+        <div class="product-text">Hypoallergenic, breathable microporous tape for securing lightweight dressings and holding gauzes to the skin. Micro-porous with optimum adhesion.</div>
       </div>
 
-      <!-- Product 2 -->
+      <!-- PRODUCT 2: NGCLEAR -->
       <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M10 32 C10 20 54 20 54 32 C54 44 10 44 10 32 Z" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
-          <path d="M16 32 C16 24 48 24 48 32 C48 40 16 40 16 32 Z" fill="rgba(201,168,76,0.08)" stroke="rgba(201,168,76,0.3)" stroke-width="1"/>
-          <path d="M10 28 Q32 22 54 28" stroke="rgba(201,168,76,0.4)" stroke-width="0.75" fill="none"/>
-          <path d="M10 36 Q32 42 54 36" stroke="rgba(201,168,76,0.4)" stroke-width="0.75" fill="none"/>
-          <circle cx="32" cy="32" r="5" fill="none" stroke="rgba(201,168,76,0.6)" stroke-width="1.5"/>
-          <circle cx="32" cy="32" r="2" fill="rgba(201,168,76,0.4)"/>
-        </svg>
-        <div class="product-title">Cotton Crepe Bandage</div>
-        <div class="product-text">High-elasticity cotton crepe bandages providing graduated compression and support. Widely used in orthopaedic applications, post-surgical dressing retention, and sports injury management.</div>
-        <div class="product-specs">
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> High stretch retention</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Washable and reusable</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> 5cm–15cm widths</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> WHO-GMP production</div>
+        <div class="product-img-wrapper">
+          <img src="assets/ngclear.png" alt="NGCLEAR Transparent Tape" class="product-img" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Coming+Soon'">
         </div>
-        <div class="product-expand">
-          <i class="fa-solid fa-flask"></i> Clinical Grade
-        </div>
+        <span class="product-tag">NGCLEAR™</span>
+        <div class="product-title">Transparent Polyethylene Tape</div>
+        <div class="product-text">Highly permeable, perforated tape for securing medical devices, IV tubes, and catheters. Features a bi-directional tear and transparent design for easy monitoring.</div>
       </div>
 
-      <!-- Product 3 -->
+      <!-- PRODUCT 3: NG-SilverPU -->
       <div class="product-card">
-        <svg class="product-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <rect x="12" y="14" width="40" height="36" rx="3" fill="rgba(201,168,76,0.1)" stroke="rgba(201,168,76,0.5)" stroke-width="1.5"/>
-          <rect x="18" y="20" width="28" height="24" rx="2" fill="rgba(15,123,94,0.15)" stroke="rgba(15,123,94,0.4)" stroke-width="1"/>
-          <path d="M18 26 L46 26" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
-          <path d="M18 32 L46 32" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
-          <path d="M18 38 L38 38" stroke="rgba(201,168,76,0.3)" stroke-width="0.75"/>
-          <circle cx="48" cy="46" r="8" fill="rgba(15,123,94,0.2)" stroke="rgba(15,123,94,0.5)" stroke-width="1.5"/>
-          <path d="M48 42 L48 50 M44 46 L52 46" stroke="rgba(15,123,94,0.7)" stroke-width="1.5"/>
-        </svg>
-        <div class="product-title">Transparent IV Dressing</div>
-        <div class="product-text">Clear, semi-permeable polyurethane film dressings for secure IV catheter fixation. Allows continuous visual monitoring of the insertion site while maintaining a sterile, waterproof barrier.</div>
-        <div class="product-specs">
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Waterproof barrier film</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> 360° visual monitoring</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Sterile packed</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Breathable membrane</div>
+        <div class="product-img-wrapper">
+          <img src="assets/ngsilver.png" alt="NG-SilverPU Dressing" class="product-img" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Coming+Soon'">
         </div>
-        <div class="product-expand">
-          <i class="fa-solid fa-flask"></i> Clinical Grade
-        </div>
+        <span class="product-tag">NG-SilverPU™</span>
+        <div class="product-title">PU Antimicrobial Post-OP Dressing</div>
+        <div class="product-text">Waterproof PU film with a non-adherent antibacterial silver-coated absorbent pad. Soft, porous, and designed for post-operative infection prevention.</div>
       </div>
 
-      <!-- Product 4 — Expanding portfolio card -->
-      <div class="product-card" style="border-style:dashed;opacity:0.7">
-        <svg class="product-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="32" cy="32" r="22" fill="none" stroke="rgba(201,168,76,0.3)" stroke-width="1.5" stroke-dasharray="4 3"/>
-          <path d="M32 20 L32 44 M20 32 L44 32" stroke="rgba(201,168,76,0.5)" stroke-width="2"/>
-        </svg>
-        <div class="product-title">Expanding Portfolio</div>
-        <div class="product-text">Our product roadmap includes orthopaedic padding, zinc oxide strapping tapes, advanced wound care dressings, and complex medical devices — all subject to rigorous regulatory clearance before market introduction.</div>
-        <div class="product-specs">
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Orthopaedic padding</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Zinc oxide tapes</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Advanced wound care</div>
-          <div class="product-spec"><i class="fa-solid fa-circle-check"></i> Complex medical devices</div>
+      <!-- PRODUCT 4: QUICKBOND -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="assets/quickbond.png" alt="QUICKBOND Skin Glue" class="product-img" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Coming+Soon'">
         </div>
-        <div class="product-expand" style="color:rgba(255,255,255,0.3)">
-          <i class="fa-solid fa-hourglass-half"></i> Coming Soon
-        </div>
+        <span class="product-tag">QUICKBOND™</span>
+        <div class="product-title">Topical Skin Glue</div>
+        <div class="product-text">High-strength surgical adhesive for fast, painless, and secure closure of minor topical incisions and lacerations.</div>
       </div>
 
-    </div>
-    <div style="text-align:center;margin-top:3rem" class="fade-up">
-      <p style="color:rgba(255,255,255,0.4);font-size:0.82rem;font-family:'DM Mono',monospace;letter-spacing:0.08em;text-transform:uppercase">All products supplied from ISO 13485 · WHO-GMP · CDSCO certified facilities</p>
-    </div>
-  </div>
-</section>
+      <!-- PRODUCT 5: STAPLER -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="assets/stapler.png" alt="Skin Stapler" class="product-img" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Coming+Soon'">
+        </div>
+        <span class="product-tag">NG-STAPLE™</span>
+        <div class="product-title">Premium Skin Stapler</div>
+        <div class="product-text">Ergonomic, sterile skin stapler for rapid closure of surgical incisions and emergency trauma wounds. Provides uniform tension and easy extraction.</div>
+      </div>
 
-<!-- ─── GLOBAL REACH ─── -->
-<section id="reach">
-  <div class="container">
-    <div class="fade-up">
-      <span class="section-tag">Global Reach</span>
-      <div class="divider"></div>
-      <h2 class="display section-title">Unified Infrastructure.<br/>Scalable Supply.</h2>
-      <p class="section-sub">An optimized supply network designed to keep clinical quality management and enterprise market relationships in perfect alignment — from our central operations to international healthcare channels.</p>
-    </div>
-    <div class="reach-grid fade-up">
-      <div>
-        <div class="location-card">
-          <div class="location-flag">🇮🇳</div>
-          <div class="location-country">India</div>
-          <div class="location-city">Bangalore, Karnataka</div>
-          <span class="location-role">Operational Headquarters</span>
-          <div class="location-detail">Our Bangalore base orchestrates complete quality assurance, regulatory management, clinical-grade validation, and precision logistics coordination. Established workflows with advanced, certified manufacturing facilities ensure consistent volume output at optimal cost structures..</div>
+      <!-- PRODUCT 6: TROCAR -->
+      <div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="assets/eztrocar.png" alt="EZ Trocar" class="product-img" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Coming+Soon'">
         </div>
-        <div class="reach-cepa" style="margin-top:1rem">
-          <div class="cepa-title">INTEGRATED VALUE ARCHITECTURE</div>
-          <div class="cepa-text">By streamlining the lifecycle from production lines to final delivery handovers, Muhzijk eliminates structural friction and multi-layered logistics bottlenecks — offering a competitive cost-to-volume advantage that secures institutional clinical supplies.</div>
-          <div class="cepa-badge"><i class="fa-solid fa-shield-halved"></i> Optimized Cost Structures</div>
-        </div>
+        <span class="product-tag">NG-EzTrocar™</span>
+        <div class="product-title">Bladeless Optical Trocar</div>
+        <div class="product-text">Disposable laparoscopic port with visual guidance and bladeless separation. Features a retractable valve and enhanced sealing for minimally invasive surgeries.</div>
       </div>
-      <div>
-        <div class="location-card">
-          <div class="location-flag">INT</div>
-          <div class="location-country">ENTERPRISE CHANNELS</div>
-          <div class="location-city">Cross-Border Delivery Networks</div>
-          <span class="location-role">Market Integration</span>
-          <div class="location-detail">Our network architecture provides optimized access to hospital procurement groups across key international regions. Combining deep clinical product expertise with specialized local distributor partnerships, we bridge the gap between technical production and institutional healthcare demands.</div>
+
+      <!-- PRODUCT 7: ABSORBABLE SUTURES -->
+      <!--div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="assets/suture_abs.png" alt="Absorbable Sutures" class="product-img" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Coming+Soon'">
         </div>
-        <div style="background:#fff;border:1px solid var(--border);border-radius:8px;padding:2rem;margin-top:1rem">
-          <div style="font-size:0.72rem;font-family:'DM Mono',monospace;letter-spacing:0.1em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem">ADDRESSABLE NETWORKS</div>
-          <div style="display:flex;flex-wrap:wrap;gap:8px">
-            <span style="background:var(--navy);color:var(--gold-light);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em">Tier-1,2,3 Hospitals</span>
-            <span style="background:var(--offwhite);color:var(--text-muted);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em;border:1px solid var(--border)">Clinical Networks</span>
-            <span style="background:var(--offwhite);color:var(--text-muted);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em;border:1px solid var(--border)">Regional Hubs</span>
-            <span style="background:var(--offwhite);color:var(--text-muted);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em;border:1px solid var(--border)">Enterprise Distributors</span>
-            <span style="background:var(--offwhite);color:var(--text-muted);font-size:0.72rem;padding:6px 14px;border-radius:2px;font-family:'DM Mono',monospace;letter-spacing:0.06em;border:1px solid var(--border)">OEM / Private Labelling</span>
-          </div>
-          <div style="margin-top:1.5rem;padding-top:1.5rem;border-top:1px solid var(--border)">
-            <div style="display:flex;align-items:center;gap:8px;color:var(--emerald);font-size:0.82rem;font-weight:500"><i class="fa-solid fa-circle-check"></i> Validated regulatory pathways</div>
-            <div style="display:flex;align-items:center;gap:8px;color:var(--emerald);font-size:0.82rem;font-weight:500;margin-top:8px"><i class="fa-solid fa-circle-check"></i> Seamless hospital & distributor handovers</div>
-            <div style="display:flex;align-items:center;gap:8px;color:var(--emerald);font-size:0.82rem;font-weight:500;margin-top:8px"><i class="fa-solid fa-circle-check"></i> Process-driven cost efficiency active</div>
-          </div>
+        <span class="product-tag">SURGICAL SUTURES</span>
+        <div class="product-title">Absorbable Sutures</div>
+        <div class="product-text">Premium Polyglactin (Vicryl equivalent) and Poliglecaprone (Monocryl equivalent) synthetic absorbable sutures with high-grade atraumatic needles.</div>
+      </div-->
+
+      <!-- PRODUCT 8: NON-ABSORBABLE SUTURES -->
+      <!--div class="product-card">
+        <div class="product-img-wrapper">
+          <img src="assets/suture_nonabs.png" alt="Non-Absorbable Sutures" class="product-img" onerror="this.src='https://via.placeholder.com/200x150?text=Image+Coming+Soon'">
         </div>
-      </div>
+        <span class="product-tag">SURGICAL SUTURES</span>
+        <div class="product-title">Non-Absorbable Sutures</div>
+        <div class="product-text">High-tensile Polypropylene (Prolene equivalent) and Black Braided Silk sutures designed for optimal knot security in cardiovascular and skin closures.</div>
+      </div-->
+
     </div>
   </div>
 </section>
@@ -593,100 +205,23 @@ footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:3rem 2rem;font
 <!-- ─── CONTACT ─── -->
 <section id="contact">
   <div class="container">
-    <div class="fade-up">
-      <span class="section-tag">Contact Sales</span>
-      <div class="divider"></div>
-      <h2 class="display section-title">Begin a Procurement<br/>Conversation</h2>
-      <p class="section-sub">Whether you are a hospital procurement officer, medical distributor, or institutional buyer — we are ready to discuss how Muhzijk Medicals fits your supply requirements.</p>
-    </div>
-    <div class="contact-grid fade-up">
+    <div class="contact-grid">
       <div>
-        <form id="contactForm" onsubmit="handleSubmit(event)">
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="firstName">First Name</label>
-              <input class="form-input" type="text" id="firstName" placeholder="Dr. Amit" required/>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="lastName">Last Name</label>
-              <input class="form-input" type="text" id="lastName" placeholder="Sharma" required/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="email">Email Address</label>
-            <input class="form-input" type="email" id="email" placeholder="procurement@hospital.com" required/>
-          </div>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label" for="org">Organisation</label>
-              <input class="form-input" type="text" id="org" placeholder="ABC Hospital"/>
-            </div>
-            <div class="form-group">
-              <label class="form-label" for="role">Your Role</label>
-              <input class="form-input" type="text" id="role" placeholder="Procurement Manager"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="interest">Area of Interest</label>
-            <select class="form-input" id="interest">
-              <option value="" disabled selected>Select product category...</option>
-              <option>Surgical Tapes — Microporous / Transparent</option>
-              <option>Crepe & Elastic Bandages</option>
-              <option>IV Fixation & Dressings</option>
-              <option>Orthopedic Padding</option>
-              <option>Advanced Wound Care (Upcoming)</option>
-              <option>Full Portfolio — General Enquiry</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label" for="message">Message</label>
-            <textarea class="form-input" id="message" placeholder="Describe your volume requirements, specific product specifications, or any compliance documentation you require..."></textarea>
-          </div>
-          <button type="submit" class="btn-submit" id="submitBtn">
-            <i class="fa-solid fa-paper-plane"></i>
-            <span>Submit Enquiry</span>
-          </button>
-          <div id="formSuccess" style="display:none;margin-top:1rem;padding:1rem;background:var(--emerald-light);border-radius:3px;color:var(--emerald);font-size:0.88rem;display:flex;align-items:center;gap:8px">
-            <i class="fa-solid fa-circle-check"></i> Thank you. Our sales team will be in touch within 24 hours.
-          </div>
-        </form>
+        <div class="divider"></div>
+        <h2 class="display section-title">Request a Quote or Clinical Samples</h2>
+        <p style="color:rgba(255,255,255,0.7); margin-bottom:2rem;">Contact our central procurement desk to receive the Muhzijk Clinical Evaluation Kit or discuss customized volume pricing.</p>
+        <div style="margin-bottom:1rem;"><i class="fa-solid fa-envelope" style="color:var(--gold);margin-right:10px;"></i> sales@muhzijkmedicals.com</div>
+        <div style="margin-bottom:1rem;"><i class="fa-solid fa-phone" style="color:var(--gold);margin-right:10px;"></i> +91 7760989176</div>
+        <div style="margin-bottom:1rem;"><i class="fa-solid fa-location-dot" style="color:var(--gold);margin-right:10px;"></i> U101 Oxford Tower, HAL Old Airport Road, Bangalore - 560008</div>
       </div>
-      <div class="contact-info">
-        <div class="contact-info-title">Get in Touch</div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
-          <div>
-            <div class="contact-item-label">Registered Address</div>
-            <div class="contact-item-value">U101 Oxford Tower, 139/88<br/>HAL Old Airport Road, H.A.L II Stage<br/>Bangalore North — 560008<br/>Karnataka, India</div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
-          <div>
-            <div class="contact-item-label">Email</div>
-            <div class="contact-item-value">
-              <a href="mailto:sales@muhzijkmedicals.com">sales@muhzijkmedicals.com</a><br/>
-              <a href="mailto:info@muhzijkmedicals.com">info@muhzijkmedicals.com</a>
-            </div>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
-          <div>
-            <div class="contact-item-label">Phone & WhatsApp</div>
-            <div class="contact-item-value">
-              🇮🇳 India: <a href="tel:+91XXXXXXXX">+91 7760989176, +91 8296403080</a><br/>
-              🇦🇪 UAE: <a href="tel:+971XXXXXXX">+971 544204705</a>
-            </div>
-          </div>
-        </div>
-        <hr class="contact-divider"/>
-        <div class="trust-badges">
-          <div class="trust-badge"><i class="fa-solid fa-shield-halved"></i> ISO 13485 Certified Supply Chain</div>
-          <div class="trust-badge"><i class="fa-solid fa-file-circle-check"></i> CDSCO Regulatory Management</div>
-          <div class="trust-badge"><i class="fa-solid fa-plane"></i> Optimized Institutional Freight</div>
-          <div class="trust-badge"><i class="fa-solid fa-handshake"></i> WHO-GMP Compliant Infrastructure</div>
-        </div>
+      <div>
+        <form>
+          <input type="text" class="form-input" placeholder="Hospital / Organization Name" required>
+          <input type="text" class="form-input" placeholder="Contact Person" required>
+          <input type="email" class="form-input" placeholder="Official Email Address" required>
+          <input type="text" class="form-input" placeholder="Products of Interest (e.g., NGPOR, Sutures)">
+          <button type="submit" class="btn-submit">Submit Inquiry</button>
+        </form>
       </div>
     </div>
   </div>
@@ -694,76 +229,8 @@ footer{background:var(--navy);color:rgba(255,255,255,0.5);padding:3rem 2rem;font
 
 <!-- ─── FOOTER ─── -->
 <footer>
-  <div class="footer-inner">
-    <div class="footer-brand">
-      <div class="footer-mark">M</div>
-      <div>
-        <div style="color:rgba(255,255,255,0.8);font-weight:500;font-size:0.88rem">Muhzijk Medical Supplies LLP</div>
-        <div style="font-size:0.72rem;margin-top:2px;font-family:'DM Mono',monospace;letter-spacing:0.04em">muhzijkmedicals.com</div>
-      </div>
-    </div>
-    <div class="footer-links">
-      <a href="#about">About</a>
-      <a href="#solutions">Solutions</a>
-      <a href="#products">Products</a>
-      <a href="#reach">Global Reach</a>
-      <a href="#contact">Contact</a>
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-    </div>
-  </div>
-  <div class="footer-copy">
-    <span>© <span id="year"></span> Muhzijk Medical Supplies LLP. All rights reserved. &nbsp;·&nbsp; Branded for Brilliance, Crafted for Care &nbsp;·&nbsp; Bangalore, India &nbsp;·&nbsp; muhzijkmedicals.com</span>
-  </div>
+  <p>© 2026 Muhzijk Medical Supplies LLP. Branded for Brilliance, Crafted for Care.</p>
 </footer>
 
-<script>
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
-
-const hamburgerBtn = document.getElementById('hamburgerBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-hamburgerBtn.addEventListener('click', () => {
-  mobileMenu.classList.toggle('open');
-});
-document.querySelectorAll('.mobile-link').forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
-});
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
-  });
-}, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-
-function handleSubmit(e) {
-  e.preventDefault();
-  const btn = document.getElementById('submitBtn');
-  btn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i><span>Sending...</span>';
-  btn.disabled = true;
-  setTimeout(() => {
-    btn.innerHTML = '<i class="fa-solid fa-circle-check"></i><span>Enquiry Sent</span>';
-    btn.style.background = 'var(--emerald)';
-    const successDiv = document.getElementById('formSuccess');
-    successDiv.style.display = 'flex';
-    document.getElementById('contactForm').reset();
-  }, 1400);
-}
-
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    e.preventDefault();
-    const target = document.querySelector(this.getAttribute('href'));
-    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  });
-});
-</script>
 </body>
 </html>
-
-
